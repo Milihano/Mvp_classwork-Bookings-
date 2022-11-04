@@ -9,5 +9,6 @@ const connection = mysql.createConnection({
   port: process.env.DATABASE_PORT,
   database: process.env.DATABASE_NAME
 })
+connection.connect()
 
 module.exports = connection

@@ -13,14 +13,13 @@ const checkIfUserExist = (phone,email) =>{
         resolve(results)
       }
     )
-    connection.end()
   })
 }
 
-const creatingUser = (firstname,othernames,phone,email,age,Time) =>{
+const creatingUser = (firstname,othernames,phone,email,age,time) =>{
   return new Promise ((resolve,reject)=>{
     connection.query(
-      `INSERT INTO customers(customer_id,firstname,othernames,phone,email,age,Time_) VALUES('${uuidv4()}','${firstname}','${othernames}','${phone}','${email}','${age}','${Time}')`,
+      `INSERT INTO customers(customer_id,firstname,othernames,phone,email,age,Time_) VALUES('${uuidv4()}','${firstname}','${othernames}','${phone}','${email}','${age}','${time}')`,
       function(err, results, fields) {
         if (err) {
           reject(err)
@@ -31,6 +30,7 @@ const creatingUser = (firstname,othernames,phone,email,age,Time) =>{
     connection.end()
   })
 }
+
 
 
 module.exports = {checkIfUserExist,creatingUser}

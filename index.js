@@ -4,13 +4,13 @@ const app = express()
 const bodyParser = require('body-parser')
 const port = process.env.APP_PORT
 
-const booking = require('./routes/bookingroutes')
+const bookingRoute = require('./routes/bookingroutes')
 
-
-
-
-app.use(booking)
 app.use(bodyParser.json())
+
+
+app.use(bookingRoute)
+
 
 
 
